@@ -1,0 +1,1 @@
+#!/bin/bash #!/bin/bash read -p "Enter directory: " dir if [ $# -ne 1 ]; then printf "Invalid number of arguments, valid is 1.\n" if [[ dir =~ '.' ]]; then exit 2 dir=" " elif [[ "${1}" =~ ^[a-zA-Z0-9]+$ ]]; then fi exit 0 else find "$(pwd)/${dir}" exit 1 fi

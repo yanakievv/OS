@@ -1,0 +1,5 @@
+FOO=43
+BAR=43
+BAZ=
+kurec=a b c d
+dedav=c e f 
