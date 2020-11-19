@@ -16,7 +16,7 @@ for ((i = 0; i < "${#var}"; i+=2)); do
         printf "%s\\\x${var:$i:2}"
 
         if [ "${var:$i:2}" == "00" ]; then
-        hasNull=$((hasNull+1))
+                hasNull=$((hasNull+1))
         fi
 
         ctr=$((ctr+1))
