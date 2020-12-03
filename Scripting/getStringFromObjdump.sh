@@ -4,9 +4,16 @@ if [ $# -ne 1 ]; then
         printf "Invalid number of arguments.\n"
         printf "Usage: ./getStringFromObjdump.sh [executable] \n"
         printf "Command objdump is ran with flag -d.\n"
-        printf "See objdump(1) for more info.\n"
+        printf "See OBJDUMP(1) for more info.\n"
         exit 1
 fi
+
+objdump -d $1 > /dev/null
+
+if [ $? -ne 0 ]; then
+        exit 2
+fi
+
 
 var=$(objdump -d $1 | grep -A10000 'Disassembly of section .text:'| tail +4 | sed -n '/Disassembly of section/q;p' | cut -f2 | tr -d "\n" | tr -d " ")
 ctr=0
@@ -26,5 +33,6 @@ printf "\nNumber of instructions: ${ctr}\n"
 printf "Null Bytes: ${hasNull}\n"
 
 exit 0
+
 
 
