@@ -4,7 +4,7 @@ if [ $# -ne 1 ]; then
         printf "Invalid number of arguments.\n"
         printf "Usage: ./getStringFromObjdump.sh [executable] \n"
         printf "Command objdump is ran with flag -d.\n"
-        printf "See OBJDUMP(1) for more info.\n"
+        printf "See objdump(1) for more info.\n"
         exit 1
 fi
 
