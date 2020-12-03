@@ -9,9 +9,10 @@ if [ $# -ne 1 ]; then
 fi
 
 objdump -d $1 > /dev/null
+ex=$?
 
-if [ $? -ne 0 ]; then
-        exit 2
+if [ "$ex" -ne 0 ]; then
+        exit "$ex"
 fi
 
 
@@ -33,6 +34,7 @@ printf "\nNumber of instructions: ${ctr}\n"
 printf "Null Bytes: ${hasNull}\n"
 
 exit 0
+
 
 
 
